@@ -1,4 +1,4 @@
-//© A+ Computer Science
+//ï¿½ A+ Computer Science
 // www.apluscompsci.com
 
 //array delete example
@@ -23,36 +23,35 @@ public class ArrayDelete
 	public static int[] removeIt( int[] iRay, int val )
 	{
 		//Create a new array
-
+		int[] newArray;
 
 		//The new array size is the same as the parameter's
 		//size minus the count of whatever value we are
 		//removing
 		//Use the countIt method
-
+		newArray = new int[iRay.length - countIt(iRay, val)];
 
 		//Keep track of where I should place values in the
 		//new array
-
+		int pos = 0;
 
 		//Go through the original array to find non-"val's"
-
+		for (int x : iRay)
 		{
 			//If the item is not equal to the "val" copy it
 			//into the new array
-
+			if(x != val)
 			{
 				//Put the item in the current position in
 				//the new array
-
+				newArray[pos] = x;
 
 				//Increase the position
-
+				pos++;
 			}
 		}
 
-
-
+		return newArray;
 
 	}
 

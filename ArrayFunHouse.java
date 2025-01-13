@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 public class ArrayFunHouse
 {
-	//Instance Variables
+	//Instance Variables or Fields
 	private int[] numArray;
 
 	//Default Constructor
@@ -26,11 +26,13 @@ public class ArrayFunHouse
 	}
 
 	//getSum() will return the sum of the numbers from start to stop,
-	//not including stop
+	//not including stop (exclusive)
 	public int getSum(int start, int stop)
 	{
 		int sum = 0;
 
+		for (int i = start; i < stop; i++)
+			sum += numArray[i];
 
 		return sum;
 	}
@@ -40,7 +42,9 @@ public class ArrayFunHouse
 	{
 		int count=0;
 
-
+		for (int x : numArray)
+			if (x == val)
+				count++;
 
 		return count;
 	}
@@ -51,7 +55,7 @@ public class ArrayFunHouse
 		//There is no print here
 		String returnString = "";
 
-		//Build the returnString here which contains the values of numArray
+		/*Build the returnString here which contains the values of numArray
 		for(int i=0; i<numArray.length; i++)
 		{
 			if(i==0)
@@ -61,6 +65,9 @@ public class ArrayFunHouse
 			else
 				returnString += numArray[i] + " ";
 		}
+		*/
+
+		returnString = Arrays.toString(numArray);
 
 		return returnString;
 	}
